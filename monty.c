@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 	size_t buffsize = 1024;
 	char *buffer = malloc(buffsize * sizeof(char));
 	int count = 0;
+	int convert = 0;
 	char *token;
 	char *command = malloc(buffsize * sizeof(char));
 
@@ -22,20 +23,24 @@ int main(int argc, char **argv)
 	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
+	{
 		fprintf(stderr, "Unable to open file\n");
-
+		exit(EXIT_FAILURE);
+	}
 	while (fgets(buffer, buffsize, file) != NULL)
 	{
 		token = strtok(buffer, " ");
 		strcpy(command, token);
-		token = strtok(NULL, " ");
-		int data = 0;
-		if (!token)
+		if (validnum(token))
 		{
-			data = atoi(token);
+			convert = atoi(token);
+			count++;
+			printf("Line count: %d", count);
 		}
-		count++;
-		printf("Line count: %d\n", count);
+		else
+		{
+			fprintf(stderr, "ERROR CODE\N", count);
+		}
 	}
 	fclose(file);
 	free(buffer);

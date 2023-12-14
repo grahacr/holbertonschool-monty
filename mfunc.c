@@ -16,20 +16,3 @@ int validnum(char *str)
 	}
 	return (1);
 }
-/**
- *
- *
- */
-stack_t *new_node(int n)
-{
-	stack_t *new = malloc(sizeof(stack_t));
-	if (new == NULL)
-	{
-
-	}
-	new->n = n;
-	new->next = NULL;
-	new->prev = NULL;
-
-	return (new);
-}
