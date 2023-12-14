@@ -8,11 +8,11 @@ int main(int argc, char **argv)
 	FILE *file;
 	size_t buffsize = 1024;
 	char *buffer = malloc(buffsize * sizeof(char));
-	int count, data = 0;
+	int count;
 	char *token;
 	char *command = malloc(buffsize * sizeof(char));
 
-	if (!buffer || !comand)
+	if (!buffer || !command)
 		return (0);
 	
 	if (argc < 2)
