@@ -19,7 +19,7 @@ void(*getop(char *op, unsigned int count))(stack_t **stack, unsigned int line_nu
 		compare = strcmp(op, oplist[i].opcode);
 		       if (compare == 0)
 			       return (oplist[i].f);
-		
+       i++;		       
 	}
-	i++;
+	return (NULL);
 }

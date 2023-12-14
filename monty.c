@@ -9,7 +9,6 @@ int main(int argc, char **argv)
 	size_t buffsize = 1024;
 	char *buffer = malloc(buffsize * sizeof(char));
 	int count = 0;
-	int convert = 0;
 	char *token;
 	char *command = malloc(buffsize * sizeof(char));
 
@@ -33,13 +32,13 @@ int main(int argc, char **argv)
 		strcpy(command, token);
 		if (validnum(token))
 		{
-			convert = atoi(token);
+			int convert = atoi(token);
 			count++;
 			printf("Line count: %d", count);
 		}
 		else
 		{
-			fprintf(stderr, "ERROR CODE\N", count);
+			fprintf(stderr, "ERROR CODE\n", count);
 		}
 	}
 	fclose(file);
