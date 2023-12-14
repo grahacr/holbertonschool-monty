@@ -15,6 +15,7 @@ void(*getop(char *op, unsigned int count))(stack_t **stack, unsigned int line_nu
 	};
 	while (i < 2)
 	{
+		count++;
 		compare = strcmp(op, oplist[i].opcode);
 		       if (compare == 0)
 			       return (oplist[i].f);

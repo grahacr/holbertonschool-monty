@@ -3,7 +3,7 @@
  *
  *
  */
-int main(int argc, char **argv);
+int main(int argc, char **argv)
 {
 	FILE *file;
 	size_t buffsize = 1024;

@@ -8,7 +8,7 @@ int validnum(char *str)
 {
 	int i = 0;
 
-	while(stri[i])
+	while(str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
