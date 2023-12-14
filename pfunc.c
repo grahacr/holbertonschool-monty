@@ -3,37 +3,34 @@
  *
  *
  */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int n)
 {
 	stack_t *new = NULL;
-	new = new_node(n);
-	new->next = *stack;
+	new = malloc(sizeof(stack_t));
 
-	if (*stack != NULL)
+	if (!new)
 	{
-		(*stack)->prev = new;
-	}
-	*stack = new;
-
-	else
-	{
-		perror("L<line_number: usage: push integer\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
+	new->n = n;
+	new->next = *stack;
+	new->prev = NULL;
+	(*stack)->prev = new;
+	*head = new;
 }
+
 /**
  *
  *
  */
 void pall(stack_t **stack, unsigned int n)
 {
-	stack_t *temp = NULL;
-	void(n);
-	current = *stack;
-	while (current != NULL)
+	stack_t *temp = *stack;
+	while (temp != NULL)
 	{
-		dprintf(STDOUT_FILENO, "%d\n", current->n);
-		current = current->next;
+		dprintf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }
 /**

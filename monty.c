@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 	size_t buffsize = 1024;
 	char *buffer = malloc(buffsize * sizeof(char));
 	int count;
+	int data;
 	char *token;
 	char *command = malloc(buffsize * sizeof(char));
 
