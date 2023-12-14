@@ -9,7 +9,6 @@ int main(int argc, char **argv)
 	size_t buffsize = 1024;
 	char *buffer = malloc(buffsize * sizeof(char));
 	int count = 0;
-	int data = 0;
 	char *token;
 	char *command = malloc(buffsize * sizeof(char));
 
@@ -30,6 +29,7 @@ int main(int argc, char **argv)
 		token = strtok(buffer, " ");
 		strcpy(command, token);
 		token = strtok(NULL, " ");
+		int data = 0;
 		if (!token)
 		{
 			data = atoi(token);

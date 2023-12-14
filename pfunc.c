@@ -29,6 +29,7 @@ void push(stack_t **stack, unsigned int n)
 void pall(stack_t **stack, unsigned int n)
 {
 	stack_t *temp = *stack;
+	void(n);
 	while (temp != NULL)
 	{
 		dprintf(STDOUT_FILENO, "%d\n", temp->n);
