@@ -38,4 +38,3 @@ void pall(stack_t **stack, unsigned int n)
  *
  *
  */
-

@@ -3,30 +3,21 @@
  *
  *
  */
-int (*getop(stack_t **stack, unsigned int line_number))
+void(*getop(char *op, unsigned int count))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
-	int valid_op;
-	int len_opcode;
+	int compare;
 
-	instruction_t op[] = {
+	instruction_t oplist[] = {
 		{"push", push},
 		{"pall", pall},
 		{NULL, NULL}
 	};
-	while (op[i].opcode)
+	while (i < 2)
 	{
-		if (strcmp(arg, op[i].opcode == 0))
-		{
-			if (strcmp(arg, "push"))
-			{
-				if (DIGIT(item) == 1)
-					value = atoi(item);
-				else
-					return (1);
-			}
-			op[i].f(stack, (unsigned int)count);
-			break;
-		}
+		comparison = strcmp(op, opcode[i].opcode)
+		       if (comparison == 0)
+			       return (oplist[i].f);
 		i++;
+	}
 }
